@@ -1,0 +1,84 @@
+\documentclass[a4paper,12pt,titlepage]{article}
+\usepackage{graphicx}
+\usepackage[hidelinks]{hyperref}
+\usepackage{listings}
+\usepackage{float}
+
+
+\DeclareGraphicsExtensions{.png}
+\graphicspath{{./images/}}
+
+\begin{document}
+\input{./titlepage.tex}
+
+
+%-----------------TABLE OF CONTENT-----------------
+\newpage
+\tableofcontents
+\newpage
+%-----------------INTRODUCTION-----------------
+\section{Introduction}
+
+This document was compiled by our group and was produced as a whole by the team. \bigskip
+
+We were tasked with testing the two Buzz Notification modules. The functionality provided by the buzzNotification module should be focused on a user registering to receive a notification messages.
+
+
+%-----------------INTRODUCTION-----------------
+\section{What we tested}
+Our testing involved looking at the two notification modules and comparing it to the specification. The use cases we will be evaluated can be seen in figure ~\ref{fig:scope}
+\begin{figure}[H]
+	\centering
+	\fbox{\includegraphics[width=1.0\textwidth]{scope}}
+	\caption{The scope of the buzzNotification module.}
+	\label{fig:scope}
+\end{figure}
+%-----------------PARTS-----------------
+\newpage
+
+\section{Functional Testing}
+We tested each use case and made conclusion based on what we found. For all use cases of Buzz Notification A and B we will either that the use case a success or we will provide a list of violations of the contract requirements (e.g. pre- and post-condition violations or data structure requirement violations)
+
+% Matthew
+\subsection{Register for Notification Use Case}
+	\input{./Functional/RegisterForNotification}
+	
+% Jessica Lessev	
+\subsection{Deregister for Notification Use Case}
+	\input{./Functional/DeregisterForNotification}
+	
+% Tim Kirker	
+\subsection{Send message}
+	\input{./Functional/SendMessage}
+
+\newpage
+
+\section{Non-functional testing/assessment}
+Problems regarding performance, scalability, maintainability, reliability, usability as well as evidence/proof of said problems.
+
+% Johann Marx
+\subsection{Performance}
+	\input{./NonFunctional/Performance}
+	
+% Thinus Naude
+\subsection{Scalability}
+	\input{./NonFunctional/Scalability}
+	
+% Roger Tavares	
+\subsection{Maintainability}
+	\input{./NonFunctional/Maintainability}
+	
+% Paul Engelke
+\subsection{Reliability}
+	\input{./NonFunctional/Reliability}
+
+% Hanrich Potgieter		
+\subsection{Integrability}
+	\input{./NonFunctional/Integrability}
+	
+% Trevor Austin
+\subsection{Usability}
+	\input{./NonFunctional/Usability}
+	
+
+\end{document}
