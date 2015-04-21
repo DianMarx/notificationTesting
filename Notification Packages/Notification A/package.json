@@ -1,0 +1,22 @@
+{
+  "name": "notification",
+  "version": "0.0.4",
+  "private": true,
+  "scripts": {},
+  "dependencies": {
+    "nodemailer": ">0.0.0",
+    "database": ">0.0.0"
+  },
+  "devDependencies": {
+    "unit.js": "^1.1.3"
+  },
+  "main": "notification.js",
+  "_id": "notification@0.0.4",
+  "dist": {
+    "shasum": "3fe28299fd1a1aac8d7e45df3dcde9e79bd1909b",
+    "tarball": "https://npm.fury.io/babalela01/notification/-/0.0.4.tgz?auth=afZkKcmGSzKDn1_GeHxm"
+  },
+  "_shasum": "3fe28299fd1a1aac8d7e45df3dcde9e79bd1909b",
+  "_resolved": "https://npm.fury.io/babalela01/notification/-/0.0.4.tgz?auth=afZkKcmGSzKDn1_GeHxm",
+  "_from": "notification@>=0.0.1"
+}
