@@ -1,27 +1,36 @@
 % Paul Engelke (u13093500)
 
-The notification module had the following problems regarding \emph{Reliability}:
 \subsubsection*{Notification A}
+Below are some of the issues that could be identified in the module provided by Notifications A.
 \begin{itemize}
     \item \textbf{Function Return Values:}\newline
      All functions available in the module's API should return some indication of success.
-     However, in the case of this module, all these functions only return true. This means that 
+     However, in the case of this module, all the functions that return a value, only return true (proof of which can be found on lines 137, 169, 215, 260, 305). This means that 
      regardless of what the outcome of the function's execution is, the caller will only perceive it as 
      having succeeded --- which is an issue of reliability: if an error occurs and needs to be handled by the system, 
      nothing can be done because the function does not notify the system of erroneous execution.
      \item \textbf{Callback Usage:}\newline
      A follow-on of the previous point is the usage of callbacks.
      No provision has been made for the use of callback functions and therefore any 
-     information provided by asynchronous execution cannot be conveyed to the caller. So any return value, regardless of whether it may be true or false, cannot be trusted as the asynchronous part of the function will most likely not have been completed before it returns to the caller, i.e. the return value is unreliable.
+     information provided by asynchronous execution cannot be conveyed to the caller. So any return value, regardless of whether it may be true or false, cannot be trusted as the asynchronous part of the function will most likely not have been completed before it returns to the caller, i.e. the return value is unreliable.\newline
+     Below is a listing of the function signatures that require callbacks, but do not make provision for them:
+     \begin{lstlisting}
+     line 94  : notification.notifyRegistration(jsonObject)
+     line 140 : notification.notifyDeregistration(jsonObject)
+     line 172 : notification.notifyNewPost(jsonObject)
+     line 218 : notification.notifyDeletedThread(jsonObject)
+     line 263 : notification.notifyMovedThread(jsonObject)
+     line 308 : notification.appraisalRegister(jsonObject)
+     line 321 : notification.appraisalDeregister(jsonObject)
+     line 336 : notification.appraisalNotify(jsonObject)
+     line 390 : notification.sendNotification(jsonObject)
+     \end{lstlisting}
      \item \textbf{Logging to Console:}\newline
      In the cases where errors occur and in some cases where successful execution occurs, information about the success or failure is lost to the system as it is only logged to the console(not reliable as a persistence tool) instead of being returned in some form that the caller can interpret. This is another issue of reliability as the system cannot determine whether or not a user will now receive notifications or if a user has been deregistered from receiving notifications, etc.
 \end{itemize}
 \subsubsection*{Notification B}
 \begin{itemize}
-    \item One 
-    \item Two 
-    \item Three 
-    \item Four 
+	\item Issue 1
 \end{itemize}
 \subsubsection*{Remarks}
 [Remarks go here...]
