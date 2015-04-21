@@ -1,1 +1,17 @@
 % Thinus Naude
+In regards to scalability of the notification module for both A and B the system should have had the ability to work for all Computer Science
+modules at a University of the size of the University of Pretoria. Each teams module is discussed below 
+\subsubsection*{Notification A}
+The notification A module will be scalable for any size as it is a proper NodeJS module, meaning one could launch multiple instances over a cluster of servers without any conflict or problem.
+
+A problem could however arise i.t.o. scalability as the module does not cater for rapid switching of the database it uses. This could lead to problems down the line where you would need to manually intervene if you would want to support more then once database connection/location.  
+\subsubsection*{Notification B}
+The notification B module will not be scalable as it is an express application and as such wont be able to be included into another NodeJS application. This is because the functionality of the notification system is intertwined with a Express web server code. In their main file at the top they have the following code: 
+\begin{lstlisting}
+var express = require('express'),
+app = express();
+\end{lstlisting}
+This will result in each inclusion of the notification module having a full blown express application. It would be a extreme waste of system resources to scale this module. 
+
+\subsubsection*{Remarks}
+Neither of the teams did what was required fully by the architectural requirements but Notification A does allow for scalability. There were no major problems or concerns in regard to Notification A unlike notifications B which would not be scalable.
