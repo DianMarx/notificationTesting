@@ -3,10 +3,18 @@
 The notification module had the following problems regarding \emph{Reliability}:
 \subsubsection*{Notification A}
 \begin{itemize}
-    \item One 
-    \item Two 
-    \item Three 
-    \item Four 
+    \item \textbf{Function Return Values:}\newline
+     All functions available in the module's API should return some indication of success.
+     However, in the case of this module, all these functions only return true. This means that 
+     regardless of what the outcome of the function's execution is, the caller will only perceive it as 
+     having succeeded --- which is an issue of reliability: if an error occurs and needs to be handled by the system, 
+     nothing can be done because the function does not notify the system of erroneous execution.
+     \item \textbf{Callback Usage:}\newline
+     A follow-on of the previous point is the usage of callbacks.
+     No provision has been made for the use of callback functions and therefore any 
+     information provided by asynchronous execution cannot be conveyed to the caller. So any return value, regardless of whether it may be true or false, cannot be trusted as the asynchronous part of the function will most likely not have been completed before it returns to the caller, i.e. the return value is unreliable.
+     \item \textbf{Logging to Console:}\newline
+     In the cases where errors occur and in some cases where successful execution occurs, information about the success or failure is lost to the system as it is only logged to the console(not reliable as a persistence tool) instead of being returned in some form that the caller can interpret. This is another issue of reliability as the system cannot determine whether or not a user will now receive notifications or if a user has been deregistered from receiving notifications, etc.
 \end{itemize}
 \subsubsection*{Notification B}
 \begin{itemize}
