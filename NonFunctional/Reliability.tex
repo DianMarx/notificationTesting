@@ -30,7 +30,22 @@ Below are some of the issues that could be identified in the module provided by 
 \begin{itemize}
 \item \textbf{Logging to Console:}\newline
      In the cases where errors occur and in some cases where successful execution occurs, information about the success or failure is lost to the system as it is only logged to the console(not reliable as a persistence tool) instead of being returned in some form that the caller can interpret. This is another issue of reliability as the system cannot determine whether or not a user will now receive notifications or if a user has been deregistered from receiving notifications, etc.
+     An example of the above can be found starting on line 321: 
 \end{itemize}
+\begin{lstlisting}
+    notification.appraisalDeregister = function (jsonObj) {
+        appraisals.remove({
+            notification_StudentID: jsonObj.studentID,
+            notification_AppraisalType: jsonObj.appraisalType
+        }, function (err) {
+           if (err != null)
+             console.log(err);
+           else
+             console.log("user has been removed from table");
+        });
+    };
+\end{lstlisting}
+
 \subsubsection*{Notification B}
 \begin{itemize}
 	\item Issue 1
