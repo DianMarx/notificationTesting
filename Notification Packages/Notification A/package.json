@@ -1,22 +1,52 @@
 {
-  "name": "notification",
-  "version": "0.0.4",
-  "private": true,
-  "scripts": {},
-  "dependencies": {
-    "nodemailer": ">0.0.0",
-    "database": ">0.0.0"
+  "name": "buzz-notification",
+  "version": "1.1.1",
+  "description": "Notify users of activity that they are registered to via email",
+  "author": {
+    "name": "COS 301 NotificationA Team"
   },
-  "devDependencies": {
-    "unit.js": "^1.1.3"
+  "contributors": [
+    {
+      "name": "Byron Dinkelmann"
+    },
+    {
+      "name": "Molefe Molefe"
+    },
+    {
+      "name": "Thabang Letageng"
+    },
+    {
+      "name": "Rendani Dau"
+    },
+    {
+      "name": "Timothy Kirker"
+    }
+  ],
+  "scripts": {
+    "test": "node test.js",
+    "start": "node notification.js"
   },
   "main": "notification.js",
-  "_id": "notification@0.0.4",
-  "dist": {
-    "shasum": "3fe28299fd1a1aac8d7e45df3dcde9e79bd1909b",
-    "tarball": "https://npm.fury.io/babalela01/notification/-/0.0.4.tgz?auth=afZkKcmGSzKDn1_GeHxm"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/RendaniDau/COS301Phase3NotificationA"
   },
-  "_shasum": "3fe28299fd1a1aac8d7e45df3dcde9e79bd1909b",
-  "_resolved": "https://npm.fury.io/babalela01/notification/-/0.0.4.tgz?auth=afZkKcmGSzKDn1_GeHxm",
-  "_from": "notification@>=0.0.1"
+  "dependencies": {
+    "nodemailer": "1.3.2"
+  },
+  "bugs": {
+    "url": "https://github.com/RendaniDau/COS301Phase3NotificationA/issues"
+  },
+  "homepage": "https://github.com/RendaniDau/COS301Phase3NotificationA",
+  "_id": "buzz-notification@1.1.1",
+  "_shasum": "b4a0a96000de2313114faa4c4c91fee1f117c192",
+  "_from": "buzz-notification@*",
+  "_npmVersion": "2.7.1",
+  "_nodeVersion": "0.10.25",
+  "_npmUser": {},
+  "dist": {
+    "shasum": "b4a0a96000de2313114faa4c4c91fee1f117c192",
+    "tarball": "http://45.55.188.104:4873/buzz-notification/-/buzz-notification-1.1.1.tgz"
+  },
+  "_resolved": "http://45.55.188.104:4873/buzz-notification/-/buzz-notification-1.1.1.tgz"
 }
