@@ -50,7 +50,18 @@ Below are some of the issues that could be identified in the module provided by 
 Below are discussed some of the issues identified, in terms of reliability, for the Notifications B module.
 \begin{itemize}
 	\item \textbf{Function Return Values:}\newline
-	In many cases, no values are returned at all, which forces the system to assume that the call executed correctly. This causes the system to be unreliable as there is no guarantee that the function call succeeded or not.
+	In many cases, no values are returned at all, which forces the system to assume that the call executed correctly. This causes the system to be unreliable as there is no guarantee that the function call succeeded or not. An example of this is shown below and is taken from AppraisalNotifyMe.js (lines 37 - 58): 
+		\begin{lstlisting}
+		function addAppraisalToDB(details)
+		{
+			Subscription.findOne(
+			{
+				'user_id':details.post_user_id
+		
+			},function(err,docs){...});
+		}
+		\end{lstlisting}
+	Some code has been removed from the above, as not to clutter the document with redundant code, and has been replaced with '...'.
 	\item \textbf{Callback Usage}\newline
 	In most cases, like Notifications A, no provision has been made for callback functions to asynchronous function calls. This results in no means of obtaining reliable result information from the functions. Below is a list of the files containing the functions that fail to make provision for callback functions where they are needed:
 		\begin{lstlisting}
@@ -60,6 +71,23 @@ Below are discussed some of the issues identified, in terms of reliability, for 
 		StandardNotification.js
 		\end{lstlisting}
 	\item \textbf{Logging to Console:}\newline
+	As with Notifications A, information that should be returned to the caller is logged to the console where it will be lost and not serve any useful purpose.
+	An example of this is as follows, taken from DeleteNotif.js (lines 159 - 170):
+		\begin{lstlisting}
+			newNotif.save(function(err,newNotif)
+			{
+				if (err) 
+				{
+					success = false;
+					console.log("Error Adding Notification ");
+				}
+				else 
+				{
+					success = true;
+				}
+			});
+		\end{lstlisting}
+	Reliability might be improved by incorporating logged information in a result object (as specified in the specification) so that the system can be informed if any issues arise and thus provide a reliable service.
 \end{itemize}
 \subsubsection*{Remarks}
-[Remarks go here...]
+A number of problems pertaining to reliability have been identified across both modules. And in comparison, these issues are the same in both cases. It would be highly recommended that these issues be addressed accordingly as to improve the reliability of the module and thus the system as a whole.
