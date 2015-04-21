@@ -14,7 +14,8 @@ Below are some of the issues that could be identified in the module provided by 
      No provision has been made for the use of callback functions and therefore any 
      information provided by asynchronous execution cannot be conveyed to the caller. So any return value, regardless of whether it may be true or false, cannot be trusted as the asynchronous part of the function will most likely not have been completed before it returns to the caller, i.e. the return value is unreliable.\newline
      Below is a listing of the function signatures that require callbacks, but do not make provision for them:
-     \begin{lstlisting}
+\end{itemize}
+\begin{lstlisting}
      line 94  : notification.notifyRegistration(jsonObject)
      line 140 : notification.notifyDeregistration(jsonObject)
      line 172 : notification.notifyNewPost(jsonObject)
@@ -24,8 +25,10 @@ Below are some of the issues that could be identified in the module provided by 
      line 321 : notification.appraisalDeregister(jsonObject)
      line 336 : notification.appraisalNotify(jsonObject)
      line 390 : notification.sendNotification(jsonObject)
-     \end{lstlisting}
-     \item \textbf{Logging to Console:}\newline
+\end{lstlisting}
+   
+\begin{itemize}
+\item \textbf{Logging to Console:}\newline
      In the cases where errors occur and in some cases where successful execution occurs, information about the success or failure is lost to the system as it is only logged to the console(not reliable as a persistence tool) instead of being returned in some form that the caller can interpret. This is another issue of reliability as the system cannot determine whether or not a user will now receive notifications or if a user has been deregistered from receiving notifications, etc.
 \end{itemize}
 \subsubsection*{Notification B}
