@@ -1,7 +1,7 @@
 % Paul Engelke (u13093500)
 
 \subsubsection*{Notification A}
-Below are some of the issues that could be identified in the module provided by Notifications A.
+Below are some of the issues that could be identified in the module provided by Notifications A, in terms of reliability.
 \begin{itemize}
     \item \textbf{Function Return Values:}\newline
      All functions available in the module's API should return some indication of success.
@@ -47,8 +47,19 @@ Below are some of the issues that could be identified in the module provided by 
 \end{lstlisting}
 
 \subsubsection*{Notification B}
+Below are discussed some of the issues identified, in terms of reliability, for the Notifications B module.
 \begin{itemize}
-	\item Issue 1
+	\item \textbf{Function Return Values:}\newline
+	In many cases, no values are returned at all, which forces the system to assume that the call executed correctly. This causes the system to be unreliable as there is no guarantee that the function call succeeded or not.
+	\item \textbf{Callback Usage}\newline
+	In most cases, like Notifications A, no provision has been made for callback functions to asynchronous function calls. This results in no means of obtaining reliable result information from the functions. Below is a list of the files containing the functions that fail to make provision for callback functions where they are needed:
+		\begin{lstlisting}
+		AppraisalNotifyMe.js
+		DailyNotif.JS
+		DeleteNotif.js
+		StandardNotification.js
+		\end{lstlisting}
+	\item \textbf{Logging to Console:}\newline
 \end{itemize}
 \subsubsection*{Remarks}
 [Remarks go here...]
