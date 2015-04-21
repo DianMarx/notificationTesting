@@ -2,8 +2,8 @@
 Testing phase for Cos301 notifications
 
 # Repositories of the Notification Modules 
-1. (Notification A)[__Add Link here__] 
-2. [Notification B](https://github.com/BuzzSpaceB/Notification])
+1. [Notification A](https://github.com/DianMarx/notificationTesting/tree/master/Notification%20Packages/Notification%20A)
+2. [Notification B](https://github.com/BuzzSpaceB/Notification)
 
 # Who does what (for  A and B )
 1. Functional Testing
