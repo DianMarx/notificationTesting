@@ -1,2 +1,29 @@
 % Matthew Russell
-% Check template
+We found the following problems with regards to the "Register for Notification" use case of the module.
+\subsubsection*{Notification A}
+The notification module for team A had the following violations
+\begin{enumerate}
+    \item Pre condition violations:
+    \begin{itemize}
+        \item Team A provided no checks for pre-conditions.
+    \end{itemize}
+    \item Data structure requirement violations:
+    \begin{itemize}
+        \item None found.
+    \end{itemize}
+\end{enumerate}
+\subsubsection*{Notification B}
+The notification module for team B had the following violations
+\begin{enumerate}
+    \item Pre condition violations:
+    \begin{itemize}
+         \item None found.
+    \end{itemize}
+    \item Data structure requirement violations:
+    \begin{itemize}
+        \item None found.
+    \end{itemize}
+\end{enumerate}
+\subsubsection*{Remarks}
+Team A provided no checks for pre-conditions  before writing data to the database, in every case the function returns with a value of true, making it appear to succeed even when there was no data written to the database at all, and thus no registration actually happened.\newline
+Team B had no pre-condition violations. Any data that violated pre-conditions was correctly checked for and handled, registration of the user is only made if all the pre-conditions are successfully met.
