@@ -1,2 +1,21 @@
 % Roger Tavares	
 % Check template 
+As defined in the Architectural Requirements Document all modules should be designed and developed in such a way that they are modular allowing for sub modules to be added or even removed during development.\newline
+
+This allows for a more maintainable system as Diagnostics of potential flaws and function clashes can now be eliminated as the system can be tested as individual parts or even as a whole allowing for a more stable module.\newline
+
+Team A and B's modules will each be discussed below with regards to this non functional requirement:
+\subsubsection*{Notification A}
+\begin{itemize}
+	\item The initial problem with Notification A is that all the code is part of the same Java Script file suggesting that the whole module is dependent on itself and if one function is providing the wrong functionality the whole module will fail or produce incorrect output.
+	\item Opening the Java Script file one can immediately see that this module is not made of sub modules and testing is done by commenting out of code. This can produce many errors and is hard to test since you don't know which line of code is producing errors or is providing incorrect results.  
+\end{itemize}
+
+\subsubsection*{Notification B}
+\begin{itemize}
+	\item Notification B has sub-dived the whole notification module into smaller more manageable sub modules allowing for individual testing. 
+	\item Each sub module can then be altered and tested before integrating into the final module allowing the system to be maintained at a constant stable version. New functionality can now be added via new submodules allowing for plug ability. 
+\end{itemize}
+
+\subsubsection*{Remarks}
+Notification A did not meet the non functional requirement maintainability as their code is not modular while on the other hand Notification B made an excellent job to ensure that their code remains as modular as possible.
