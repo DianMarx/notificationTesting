@@ -9,6 +9,6 @@ var notification = require('unit.js');
 
 // Notification B integratability
 //Their attempt at unit test fails....No way to get dependencys
-var notification = require('./Notification\ B/AllTogether.js');
+var notification = require('./Notification\ B/test.js');
 
 
