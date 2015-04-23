@@ -1,2 +1,53 @@
 % Jessica Lessev
 % Check template
+
+We found the following problems with regards to the deregisterFromNotification use case of the module.
+\subsubsection*{Notification A}
+The notification module for team A had the following violations
+\begin{enumerate}
+	\item Pre conditions:
+	\begin{itemize}
+		\item Check that the user is registered.
+		
+		 The function attempts to remove a record from the database and an error is thrown from the database. If error is null then it shows that such a record exists thus the user was registered. If the error is not null then the record did not exist and thus the user is not registered to notification. Thus the pre-condition is checked for but not in the best way possible. 
+		 
+		 Thus no pre-condition violation.
+	\end{itemize}
+	\item Post conditions:
+	\begin{itemize}
+		\item The function returns based on success or failure.
+		
+		This post-condition is violated as the function returns true as long as the function terminates. Thus the function return is not an indication as to whether the execution was a success or failure.
+		
+		\item The user is de-registered from notification. By making changes to database.
+		
+		The function removes the record corresponding to the input parameters. Thus the post-condition is not violated.	
+		
+		
+	\end{itemize}
+	\item Data structure requirement violations:
+	\begin{itemize}
+		\item 		The data structure is violated in the sense that there is no return object. Only a set boolean value is returned.
+
+	\end{itemize}
+\end{enumerate}
+\subsubsection*{Notification B}
+The notification module for team B had the following violations
+\begin{enumerate}
+	\item Pre condition violations:
+	\begin{itemize}
+		\item One 
+		\item Two 
+		\item Three 
+		\item Four 
+	\end{itemize}
+	\item Data structure requirement violations:
+	\begin{itemize}
+		\item One 
+		\item Two 
+		\item Three 
+		\item Four 
+	\end{itemize}
+\end{enumerate}
+\subsubsection*{Remarks}
+Neither of the teams did what was required in the functional requirements. Some functionality reflected what was implied ... bla bla blas write something here if you deem it necessary
