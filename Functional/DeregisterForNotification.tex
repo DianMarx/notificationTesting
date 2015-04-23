@@ -28,26 +28,37 @@ The notification module for team A had the following violations
 	\item Data structure requirement violations:
 	\begin{itemize}
 		\item 		The data structure is violated in the sense that there is no return object. Only a set boolean value is returned.
+		\item	The function itself is well structured and easy to follow.
 
 	\end{itemize}
 \end{enumerate}
 \subsubsection*{Notification B}
 The notification module for team B had the following violations
 \begin{enumerate}
-	\item Pre condition violations:
+	\item Pre condition:
 	\begin{itemize}
-		\item One 
-		\item Two 
-		\item Three 
-		\item Four 
+		\item Check that the user is registered.
+		
+		 The function takes the object it recieve as a parameter and checks that the details and the user exists in the database and thus is  registered for notification. Thus the pre-condition is met.
+ 
 	\end{itemize}
+	\item Post conditions:
+		\begin{itemize}
+			\item The function returns based on success or failure.
+			
+			This post-condition is violated as the function does not return any value. This means that the user does not know whether the function was a failure or success.
+			
+			\item The user is de-registered from notification. By making changes to database.
+			
+			The function removes the record corresponding to the input parameters. Thus the post-condition is not violated.	
+			
+			
+		\end{itemize}
 	\item Data structure requirement violations:
 	\begin{itemize}
-		\item One 
-		\item Two 
-		\item Three 
-		\item Four 
+		\item The data structure is violated in the sense that there is no return object.
+		\item The function is very long with a lot of nested if-statements thus poor structure.  
 	\end{itemize}
 \end{enumerate}
 \subsubsection*{Remarks}
-Neither of the teams did what was required in the functional requirements. Some functionality reflected what was implied ... bla bla blas write something here if you deem it necessary
+Both teams' functions achieved the final goal which is to deregister a user from notification. Both teams violated the post-conditions by not returning an object indicating whether the execution was a success or not.
