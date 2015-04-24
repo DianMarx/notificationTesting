@@ -12,16 +12,15 @@ Notification A is not integratable beacuse of the following reasons.
 	There was no supplied unit test. Unit test are xritical to determin wheater or not we can integrate it into a lager system.
 \end{itemize}
 \subsubsection*{Integratability B}
-The integratability of notification B is not adequite. There are numerbour challanges that are missing. There is no dependancy injection and all packages needs to be installed manually.
+Notification B is not integratable beacuse of the following reasons.
 \begin{itemize}
-	\item {File Structure} 
+	\item \textbf{File Structure} 
 	Each function is placed in a seperate file. There is no common module to integrate that will allow access to all the capabilities of notifications.
-	\item Installing required packages
+	\item \textbf{Installing required packages}
 	One cannot easily install the dependancys that is required by Notifications.
-	\item Dependancy Injection.
+	\item \textbf{Dependancy Injection.}
 	There is no dependacy injection.
-	\item
-	Inappropriate Unit testing. Therefore we cannot test if the functions is working. There is a file called test.js that is an attempt at unit testing but no proper unit testing was applied. They should have used someting similar to Unit.js with mocha.
+	\item \textbf{Unit tests} There is a file called test.js that is an attempt at unit testing but no proper unit testing was applied. They should have used someting similar to Unit.js.
 		~\ref{fig:IntegrationUnitTest}
 		\begin{figure}[H]
 			\centering
@@ -38,6 +37,7 @@ The integratability of notification B is not adequite. There are numerbour chall
 			\caption{Database connection issues}
 			\label{fig:scope}
 		\end{figure}
+Both modules suffer from common syntoms when it comes to Integratability. I therfore conclude that neither system is integratable and needs to look ad dependancy injection. Each package should atleast include a npm readme file to specifiy the packages are required.
 \end{itemize}
 \subsubsection*{Remarks}
 Notification B is not Integratable at alll. There is no provision for dependacny injection.
