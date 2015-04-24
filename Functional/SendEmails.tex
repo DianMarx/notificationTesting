@@ -1,0 +1,64 @@
+%Tim Kirker
+
+ We found the following problems with regards to the Send message Use Case of the module.
+ \subsubsection*{Notification A}
+ The notification module for team A had the following violations
+ \begin{enumerate}
+ 	\item Pre condition:
+ 	\begin{itemize}
+ 		\item Check that the user is registered
+			
+		A function is used to determine whether or not the user has been registered to recieve notifications.
+ 		
+		\item sends user email
+ 	\end{itemize}
+	\item Post conditions:
+	\begin{itemize}
+		\item Function returns a message based on success or failure
+			
+		A message is created
+
+		\item An email is sent to the user 
+		
+		The message is sent in an email to the registered user
+ 	
+	\end{itemize}
+	
+
+	\item Data structure requirement violations:
+ 	\begin{itemize}
+ 		\item It did not take into account callback functions thus the date structure requirements are violated.
+ 		
+ 	\end{itemize}
+ \end{enumerate}
+ \subsubsection*{Notification B}
+ The notification module for team B had the following violations
+ \begin{enumerate}
+ 	\item Pre condition violations:
+ 	\begin{itemize}
+ 		
+			\item Checks that the user is registered 
+			
+			A function is used to determine whether or not the user has been registered to recieve notifications.
+			
+			\item Takes in a JSON string
+				
+			It takes a string in the format FROM, TO, SUBJECT, PLAIN, HTML
+ 		
+ 		 
+ 	\end{itemize}
+	\item Post conditions:
+	\begin{itemize}
+			\item A user is sent an email
+			
+			A user is sent an email using a JSON string, the email contains the recipients and the message.
+ 	
+	\end{itemize}
+	\item Data structure requirement violations:
+ 	\begin{itemize}
+ 		\item 	Makes use of callback functions thus nothing is being violated.
+		\item	The email function itself is well structured and easy to follow.
+ 	\end{itemize}
+ \end{enumerate}
+ \subsubsection*{Remarks}
+ Notification A did not fully do what was required in the functional requirements. However Notifications B seemed to have managed to cover all aspects of the functional requirements
